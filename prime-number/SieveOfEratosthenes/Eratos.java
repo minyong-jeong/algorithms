@@ -18,6 +18,7 @@ public class Eratos {
 		  	if (primeArr[i]) {
 			  	for (int j = i*i; j <= n; j += i) {
 				  	primeArr[j] = false;
+			  	}
 		  	}
 	  	}
 	  
