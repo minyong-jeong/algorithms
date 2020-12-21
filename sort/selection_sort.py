@@ -12,7 +12,7 @@ O(n^2)의 시간복잡도를 가지며 알고리즘이 단순하여 메모리가
 
 def selection_sort(arr):
     length = len(arr)
-    for i in range(length):
+    for i in range(length-1):
         min_idx = i
         for j in range(i+1, length):
             if arr[min_idx] > arr[j]:
