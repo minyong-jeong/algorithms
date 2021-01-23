@@ -1,5 +1,6 @@
 #include <iostream>
-#include <unordered_map>
+
+#define MAX_SIZE 10000
 
 using namespace std;
 
@@ -10,25 +11,23 @@ int main()
 
     int N;
     cin >> N;
-    unordered_map<int, int> dic;
+
+    int dic[MAX_SIZE + 1];
+    for (int i = 0; i < MAX_SIZE + 1; i++)
+    {
+        dic[i] = 0;
+    }
 
     int num;
     for (int i = 0; i < N; i++)
     {
         cin >> num;
-        if (dic.find(num) == dic.end())
-        {
-            dic[num] = 1;
-        }
-        else
-        {
-            dic[num] += 1;
-        }
+        dic[num] += 1;
     }
 
-    for (int i = 1; i <= 10000; i++)
+    for (int i = 1; i <= MAX_SIZE; i++)
     {
-        if (dic.find(i) != dic.end())
+        if (dic[i] != 0)
         {
             for (int j = 0; j < dic[i]; j++)
             {
